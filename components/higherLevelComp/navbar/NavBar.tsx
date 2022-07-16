@@ -11,37 +11,3 @@ export interface INavBar {
   brand: string;
   navItems: INavItems[];
 }
-
-const NavBar: React.FC<INavBar> = ({ brand, navItems }) => {
-  const [menu, setMenu] = useState(false);
-  const toggleMenu = () => {
-    setMenu((pr) => !pr);
-  };
-
-  return (
-    <header>
-      <div>
-        <NavLink href={"/"}>{brand}</NavLink>
-      </div>
-      <nav>
-        {navItems.map((item, id) => {
-          return (
-            <div key={id}>
-              <NavLink href={item.url}>{item.title}</NavLink>
-            </div>
-          );
-        })}
-      </nav>
-      <div>
-        <button onClick={toggleMenu}>
-          <MenuIcon />
-        </button>
-        <button onClick={toggleMenu}>
-          <MenuOpenIcon />
-        </button>
-      </div>
-    </header>
-  );
-};
-
-export default NavBar;
