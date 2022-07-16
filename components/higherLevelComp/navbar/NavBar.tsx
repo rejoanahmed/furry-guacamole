@@ -11,3 +11,9 @@ export interface INavBar {
   brand: string;
   navItems: INavItems[];
 }
+
+function NavBar() {
+  return <div>NavBar</div>;
+}
+
+export default NavBar;
